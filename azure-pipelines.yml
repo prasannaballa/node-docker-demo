@@ -10,12 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: gulp@0
+- task: NodeTaskRunnerInstaller@0
   inputs:
-    gulpFile: 'gulpfile.js'
-    targets: 
-    gulpjs: 'node_modules/gulp/bin/gulp.js'
-    enableCodeCoverage: false
+    nodeVersion: '6'
 - task: Docker@2
   inputs:
     containerRegistry: 'Node'
