@@ -16,9 +16,12 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'Node'
-    repository: 'node123'
+    repository: 'node'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
 - task: CopyFiles@2
   inputs:
     Contents: '**'
