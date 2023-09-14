@@ -21,10 +21,11 @@ steps:
   displayName: 'npm install and build'
 - task: Docker@2
   inputs:
-    containerRegistry: 'node-yaml'
-    repository: 'nodeclassic'
+    containerRegistry: 'Node'
+    repository: 'node123'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: |
-      $(Build.BuildId)
-      latest
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: '$(build.artifactstagingdirectory)'
