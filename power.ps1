@@ -6,12 +6,12 @@
 Connect-AzAccount
 
 if ($action -eq "start") {
-    Start-AzWebApp -ResourceGroupName $resourceGroupName -Name $webAppName
-    Write-Output "Azure App Service '$webAppName' started."
+    Start-AzWebApp -ResourceGroupName $node -Name $nodeapp23
+    Write-Output "Azure App Service '$nodeapp23' started."
 }
 elseif ($action -eq "stop") {
-    Stop-AzWebApp -ResourceGroupName $resourceGroupName -Name $webAppName
-    Write-Output "Azure App Service '$webAppName' stopped."
+    Stop-AzWebApp -ResourceGroupName $node -Name $nodeapp23
+    Write-Output "Azure App Service '$nodeapp23' stopped."
 }
 else {
     Write-Output "Invalid action. Use 'start' or 'stop'."
