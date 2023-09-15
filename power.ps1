@@ -3,7 +3,6 @@
 
 
 # Authenticate to Azure
-Connect-AzAccount
 
 if ($action -eq "start") {
     Start-AzWebApp -ResourceGroupName $resourceGroupName -Name $webAppName
